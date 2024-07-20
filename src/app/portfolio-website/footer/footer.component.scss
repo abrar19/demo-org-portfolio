@@ -1,5 +1,6 @@
 .footer{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -7,6 +8,22 @@
     color: #fff;
     font-size: 20px;
     font-weight: bold;
+
+    .footer-links{
+        display: flex;
+    }
+
+    p{
+        margin: 0;
+        font-size: 14px;
+        .color-links{
+            color: gold;
+
+            &:hover{
+                color: red;
+            }
+        }
+    }
 
     a{
         text-decoration: none;
