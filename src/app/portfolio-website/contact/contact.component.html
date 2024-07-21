@@ -1,1 +1,33 @@
-<p>contact works!</p>
+<app-navbar></app-navbar>
+
+<!-- contact-form.component.html -->
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" @fade>
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" ngModel required>
+      <div class="error-message" *ngIf="contactForm.submitted && contactForm.controls['name']?.invalid">
+        Name is required.
+      </div>
+    </div>
+  
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" ngModel required email>
+      <div class="error-message" *ngIf="contactForm.submitted && contactForm.controls['email']?.invalid">
+        A valid email is required.
+      </div>
+    </div>
+  
+    <div>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" ngModel required></textarea>
+      <div class="error-message" *ngIf="contactForm.submitted && contactForm.controls['message']?.invalid">
+        Message is required.
+      </div>
+    </div>
+  
+    <button type="submit">Submit</button>
+  </form>
+  
+  
+  <app-footer></app-footer>
